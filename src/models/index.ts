@@ -5,17 +5,22 @@ import { HouseholdFactory } from "./household";
 import { DiscussionFactory, AssociateUserDiscussion } from "./discussion";
 import { RewardFactory } from "./reward";
 
-let dbname: string = process.env.DB_NAME ?? "hometasticDb";
-let user: string = process.env.DB_USER ?? "root";
-let password: string = process.env.DB_PW ?? "123";
-let host: string = process.env.DB_HOST ?? "localhost";
+const jawsdb: string = process.env.JAWSDB_URL || "";
+const dbname: string = process.env.DB_NAME || "";
+const dbuser: string = process.env.DB_USER || "";
+const dbpassword: string = process.env.DB_PW || "";
 
-// Connect to JawsDB through Sequelize.
-const sequelize = new Sequelize(dbname, user, password, {
-  host: host,
-  dialect: "mysql",
-  port: 3306,
-});
+let sequelize;
+
+if (jawsdb) {
+  sequelize = new Sequelize(jawsdb);
+} else {
+  sequelize = new Sequelize(dbname, dbuser, dbpassword, {
+    host: "localhost",
+    dialect: "mysql",
+    port: 3306,
+  });
+}
 
 TaskFactory(sequelize);
 UserFactory(sequelize);
