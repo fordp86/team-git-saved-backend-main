@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node build/app.js",
     "build": "tsc",
-    "postinstall": "npm run build",
+    "start": "npm run build && node build/app.js",
     "dev": "concurrently \"tsc -w\" \"nodemon build/app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
