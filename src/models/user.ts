@@ -79,7 +79,7 @@ export function UserFactory(sequelize: Sequelize) {
     }
   );
 }
-export function AssociateUsersToHousehold() {
-  User.hasOne(Household, { foreignKey: "userId" });
-  Household.belongsTo(User, { foreignKey: "userId" });
-}
+// export function AssociateUsersToHousehold() {
+//   User.hasOne(Household, { foreignKey: "userId" });
+//   Household.belongsTo(User, { foreignKey: "userId" });
+// }

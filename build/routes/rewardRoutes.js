@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const rewardController_1 = require("../controllers/rewardController");
+const router = (0, express_1.Router)();
+router.get("/", rewardController_1.getAllRewards);
+router.post("/", rewardController_1.createReward);
+router.get("/:id", rewardController_1.getReward);
+router.put("/:id", rewardController_1.updateReward);
+router.delete("/:id", rewardController_1.deleteReward);
+exports.default = router;

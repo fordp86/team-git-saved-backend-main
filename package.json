@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@planetscale/database": "^1.4.0",
     "@sequelize/core": "^7.0.0-alpha.10",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
@@ -22,7 +23,8 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.24.0"
+    "sequelize": "^6.24.0",
+    "sequelize-cockroachdb": "^6.0.5"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

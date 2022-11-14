@@ -46,7 +46,7 @@ export function HouseholdFactory(sequelize: Sequelize) {
     }
   );
 }
-export function AssociateHouseholdUsers() {
-  Household.hasMany(User, { foreignKey: "userId" });
-  User.belongsTo(Household, { foreignKey: "userId" });
-}
+// export function AssociateHouseholdUsers() {
+//   Household.hasMany(User, { foreignKey: "userId" });
+//   User.belongsTo(Household, { foreignKey: "userId" });
+// }
